@@ -1,6 +1,6 @@
 # Thrifter_v1
 
-A new Flutter project.
+A new Flutter project created by Aitor
 
 ## Getting Started
 
