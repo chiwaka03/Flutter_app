@@ -25,7 +25,7 @@ class cuentaPagina extends StatelessWidget {
 
 
   Widget privacidad(context)=> SimpleSettingsTile(
-    title: 'privacidad',
+    title: 'Privacidad',
     subtitle: '',
     leading: IconWidget(icon: Icons.lock, color: Colors.blue),
     onTap: (){},

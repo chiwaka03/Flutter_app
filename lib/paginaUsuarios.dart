@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 import 'package:untitled1/iconWidget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'cuentaPagina.dart';
 import 'notiPagina.dart';
@@ -22,10 +23,10 @@ class paginaUsuario extends StatelessWidget {
               SettingsGroup(
                   title: 'General',
                   children: <Widget>[
-                    cuentaPagina(),
+                    //cuentaPagina(),
                     notiPagina(),
                     modoOscuro(context),
-                    buildLogout(context),
+                    //buildLogout(context),
                   ],
               ),
               const SizedBox(height: 32),
@@ -52,13 +53,17 @@ class paginaUsuario extends StatelessWidget {
     title: 'Reportar Bug',
     subtitle: '',
     leading: IconWidget(icon: Icons.bug_report, color: Colors.blueAccent),
-    onTap: (){},
+    onTap: (){
+      launch('mailto:wearethrift3r@gmail.com?subject=Bug');
+    },
   );
   Widget sendFeedback(context)=> SimpleSettingsTile(
     title: 'Opinion',
     subtitle: '',
     leading: IconWidget(icon: Icons.thumb_up, color: Colors.purple),
-    onTap: (){},
+    onTap: (){
+      launch('mailto:wearethrift3r@gmail.com?subject=My_opinion');
+    },
   );
   Widget modoOscuro(context)=> SwitchSettingsTile(
       settingKey: oscuro,

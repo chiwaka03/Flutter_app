@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
+import 'package:untitled1/paginaUsuarios.dart';
+import 'package:untitled1/resultadoPagina.dart';
 
 class paginaInicio extends StatelessWidget {
 
@@ -10,6 +12,7 @@ class paginaInicio extends StatelessWidget {
   Widget build(BuildContext context) {
     //guardo el producto que quiere buscar
     final producto = TextEditingController();
+    String textProduct = "";
 
     //empieza la estructura de arriba abajo
     return Scaffold(
@@ -38,7 +41,12 @@ class paginaInicio extends StatelessWidget {
                 hintText: 'Escribe el producto a buscar',
                 border: OutlineInputBorder(),
                   suffixIcon: IconButton (onPressed: () {
-                    producto.clear();
+                      textProduct = producto.text;
+
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => resultadoPagina(textProduct: textProduct)),
+                    );
                   }, icon: Icon(Icons.search),)
             ),
           ),
