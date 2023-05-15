@@ -13,6 +13,7 @@ class paginaInicio extends StatelessWidget {
     //guardo el producto que quiere buscar
     final producto = TextEditingController();
     String textProduct = "";
+    final FocusNode _focusNode = FocusNode();
 
     //empieza la estructura de arriba abajo
     return Scaffold(
@@ -37,17 +38,28 @@ class paginaInicio extends StatelessWidget {
 
              TextField(
                 controller: producto,
+               focusNode: _focusNode,
                 decoration: InputDecoration (
                 hintText: 'Escribe el producto a buscar',
                 border: OutlineInputBorder(),
                   suffixIcon: IconButton (onPressed: () {
                       textProduct = producto.text;
+                      //AÑADIR COMPROBADOR
+                      if (textProduct.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Por favor, escribe un producto para buscar')),
 
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => resultadoPagina(textProduct: textProduct)),
-                    );
-                  }, icon: Icon(Icons.search),)
+                        );
+                        _focusNode.unfocus();
+                      }
+                      else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) =>
+                              resultadoPagina(textProduct: textProduct)),
+                        );
+                      }
+                      }, icon: Icon(Icons.search),)
             ),
           ),
         ],
