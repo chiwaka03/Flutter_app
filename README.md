@@ -7,3 +7,5 @@ Estos son los pasos que tienes que seguir para ejecutar el código, yo lo voy a 
 - Al iniciar el código te puede dar algún problema, tienes que poner esto al correr el codigo, en "Run", "edit configurations" y
 - por último agregar en "aditional run args" esta línea: --no-sound-null-safety. Por sí quieres saber más sobre esto, te dejo un enlace
 - https://stackoverflow.com/questions/64917744/cannot-run-with-sound-null-safety-because-dependencies-dont-support-null-safety
+
+https://github.com/user-attachments/assets/0e833fe8-782d-40b1-8999-cef588cd05e5
